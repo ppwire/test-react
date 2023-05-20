@@ -1,9 +1,11 @@
 import { useState } from "react";
+import { useNavigate } from "react-router-dom";
 import "./App.css";
 
 function App() {
   const [username, setUsername] = useState("");
   const [password, setPassword] = useState("");
+  const navigate = useNavigate();
 
   const handleUsernameChange = (e) => {
     setUsername(e.target.value);
@@ -15,6 +17,7 @@ function App() {
 
   const handleLogin = () => {
     console.log(`username: ${username} password: ${password}`);
+    navigate('/login')
   };
 
   return (
@@ -32,7 +35,8 @@ function App() {
           onChange={handlePasswordChange}
         />
         <p>{password}</p>
-        <button onClick={handleLogin}>Login</button>
+        <button onClick={handleLogin}>Login
+        </button>
       </div>
     </>
   );
