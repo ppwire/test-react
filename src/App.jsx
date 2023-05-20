@@ -17,7 +17,7 @@ function App() {
 
   const handleLogin = () => {
     console.log(`username: ${username} password: ${password}`);
-    navigate('/login')
+    navigate('/mainpage')
   };
 
   return (
